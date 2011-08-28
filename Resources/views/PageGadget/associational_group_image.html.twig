@@ -1,0 +1,20 @@
+{##
+ # SocietoGroupBundle
+ # Copyright (C) 2011 Kousuke Ebihara
+ #
+ # This program is under the EPL/GPL/LGPL triple license.
+ # Please see the Resources/meta/LICENSE file that was distributed with this file.
+ #}
+
+{% extends skin_template_path('normal_gadget.html.twig') %}
+
+{% block caption %}{{ gadget.caption }}{% endblock %}
+{% block content %}
+<ul>
+<li><a href="{{ path('group', {'group': group}) }}" title="{{ group.name }}"><img src="{{ image_path(group.imageFile, "100x100") }}" class="icon"></a></li>
+<li>{{ group.name }}</li>
+{% if not is_group_member %}
+<li><a href="{{ path('_join_group', {'group' : group}) }}">Join to this group</a></li>
+{% endif %}
+</ul>
+{% endblock %}

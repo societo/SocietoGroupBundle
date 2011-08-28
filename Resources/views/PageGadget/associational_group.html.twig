@@ -1,0 +1,27 @@
+{##
+ # SocietoGroupBundle
+ # Copyright (C) 2011 Kousuke Ebihara
+ #
+ # This program is under the EPL/GPL/LGPL triple license.
+ # Please see the Resources/meta/LICENSE file that was distributed with this file.
+ #}
+
+{% extends skin_template_path('normal_gadget.html.twig') %}
+
+{% block caption %}{{ gadget.caption }}{% endblock %}
+{% block content %}
+<table>
+<tr>
+<th>Name</th>
+<td>{{ group.name }}</td>
+</tr>
+<tr>
+<th>Description</th>
+<td>{{ group.description }}</td>
+</tr>
+<tr>
+<th>Administrator</th>
+<td><a href="{{ path("profile", {'member': group.creatorMember}) }}">{{ group.creatorMember.username }}</a></td>
+</tr>
+</table>
+{% endblock %}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="societo.group.activity_generator" class="Societo\GroupBundle\ActivityGenerator\GroupGenerator">
+            <argument>Societo\GroupBundle\Entity\AssociationalGroup</argument>
+            <tag name="societo.activity.generator" />
+        </service>
+        <service id="societo.group.member.activity_generator" class="Societo\GroupBundle\ActivityGenerator\GroupMemberGenerator">
+            <argument>Societo\GroupBundle\Entity\AssociationalGroupMember</argument>
+            <tag name="societo.activity.generator" />
+        </service>
+
+        <service id="societo.group.page_gadget.associational_group" class="Societo\GroupBundle\PageGadget\AssociationalGroup">
+            <tag name="societo.page.gadget" />
+        </service>
+
+        <service id="societo.group.page_gadget.create_associational_group_form" class="Societo\GroupBundle\PageGadget\CreateAssociationalGroupForm">
+            <tag name="societo.page.gadget" />
+        </service>
+
+        <service id="societo.group.page_gadget.belong_associational_group_list" class="Societo\GroupBundle\PageGadget\BelongAssociationalGroupList">
+            <tag name="societo.page.gadget" />
+        </service>
+
+        <service id="societo.group.page_gadget.associational_group_member_list" class="Societo\GroupBundle\PageGadget\AssociationalGroupMemberList">
+            <tag name="societo.page.gadget" />
+        </service>
+
+        <service id="societo.group.page_gadget.associational_group_search_form" class="Societo\GroupBundle\PageGadget\AssociationalGroupSearchForm">
+            <tag name="societo.page.gadget" />
+        </service>
+
+        <service id="societo.group.page_gadget.associational_group_search_list" class="Societo\GroupBundle\PageGadget\AssociationalGroupSearchList">
+            <tag name="societo.page.gadget" />
+        </service>
+
+        <service id="societo.group.page_gadget.associational_group_image" class="Societo\GroupBundle\PageGadget\AssociationalGroupImage">
+            <tag name="societo.page.gadget" />
+        </service>
+    </services>
+</container>

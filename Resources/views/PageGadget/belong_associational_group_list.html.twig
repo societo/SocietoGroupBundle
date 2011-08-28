@@ -1,0 +1,39 @@
+{##
+ # SocietoGroupBundle
+ # Copyright (C) 2011 Kousuke Ebihara
+ #
+ # This program is under the EPL/GPL/LGPL triple license.
+ # Please see the Resources/meta/LICENSE file that was distributed with this file.
+ #}
+
+{% extends skin_template_path('normal_gadget.html.twig') %}
+
+{% block caption %}{{ gadget.caption }}{% endblock %}
+{% block content %}
+<div class="icon_list">
+{% for group_member in group_members %}
+<ul>
+<li>
+<a href="{{ path('group', {'group': group_member.group}) }}" title="{{ group_member.group.name }}">
+<img src="{{ image_path(group_member.group.imageFile, '50x50') }}" class="icon">
+</a>
+</li>
+{% if show_name %}
+<li class="name">
+<a href="{{ path('group', {'group': group_member.group}) }}" title="{{ group_member.group.name }}">
+{{ group_member.group.name }}
+</a>
+</li>
+{% endif %}
+</ul>
+{% endfor %}
+</div>
+{% if route_to_more_page %}
+<p class="more"><a href="{{ path(route_to_more_page, {'member': member}) }}">More</a></p>
+{% endif %}
+{% if has_pager %}
+<div class="pagerfanta">
+{{ pagerfanta(pagerfanta, 'default', current_route_info(attributes)) }}
+</div>
+{% endif %}
+{% endblock %}
