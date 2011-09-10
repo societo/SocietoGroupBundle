@@ -8,7 +8,7 @@ namespace Societo\GroupBundle\Tests\Controller;
 
 use Societo\BaseBundle\Test\WebTestCase;
 
-class AssociationalGroupController extends WebTestCase
+class AssociationalGroupControllerTest extends WebTestCase
 {
     public function setUp()
     {
